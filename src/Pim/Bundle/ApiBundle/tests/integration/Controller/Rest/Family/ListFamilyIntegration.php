@@ -16,8 +16,8 @@ class ListFamilyIntegration extends ApiTestCase
 
         $standardFamilies = [
             [
-                'code'       => 'familyA',
-                'attributes' => [
+                'code'                   => 'familyA',
+                'attributes'             => [
                     0  => 'a_date',
                     1  => 'a_file',
                     2  => 'a_localizable_image',
@@ -61,7 +61,7 @@ class ListFamilyIntegration extends ApiTestCase
                         17 => 'an_image',
                         18 => 'sku',
                     ],
-                    'tablet' => [
+                    'tablet'    => [
                         0  => 'a_date',
                         1  => 'a_file',
                         2  => 'a_localizable_image',
@@ -83,8 +83,51 @@ class ListFamilyIntegration extends ApiTestCase
                         18 => 'sku',
                     ],
                 ],
-                'labels'     => [],
-            ]
+                'labels'                 => [],
+            ],
+            [
+                'code'                   => 'familyA1',
+                'attributes'             => [
+                    'a_date',
+                    'a_file',
+                    'a_localizable_image',
+                    'sku',
+                ],
+                'attribute_as_label'     => 'sku',
+                'attribute_requirements' => [
+                    'ecommerce' => [
+                        'a_date',
+                        'a_file',
+                        'sku',
+                    ],
+                    'tablet'    => [
+                        'a_file',
+                        'a_localizable_image',
+                        'sku',
+                    ],
+                ],
+                'labels'                 => [],
+            ],
+            [
+                'code'                   => 'familyA2',
+                'attributes'             => [
+                    'a_metric',
+                    'a_number_float',
+                    'sku',
+                ],
+                'attribute_as_label'     => 'sku',
+                'attribute_requirements' => [
+                    'ecommerce' => [
+                        'a_metric',
+                        'sku',
+                    ],
+                    'tablet'    => [
+                        'a_number_float',
+                        'sku',
+                    ],
+                ],
+                'labels'                 => [],
+            ],
         ];
 
         $response = $client->getResponse();
