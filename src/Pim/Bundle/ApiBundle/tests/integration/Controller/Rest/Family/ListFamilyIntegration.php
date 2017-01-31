@@ -10,7 +10,7 @@ class ListFamilyIntegration extends ApiTestCase
 {
     public function testListFamilies()
     {
-        $client = $this->createAuthentifiedClient();
+        $client = $this->createAuthenticatedClient();
 
         $client->request('GET', 'api/rest/v1/families');
 
@@ -97,7 +97,7 @@ class ListFamilyIntegration extends ApiTestCase
 
     public function testOutOfRangeListFamilies()
     {
-        $client = $this->createAuthentifiedClient();
+        $client = $this->createAuthenticatedClient();
 
         $client->request('GET', 'api/rest/v1/families?limit=10&page=2');
 
