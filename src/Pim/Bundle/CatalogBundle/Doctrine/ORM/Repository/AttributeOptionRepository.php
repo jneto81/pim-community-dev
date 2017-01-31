@@ -3,6 +3,7 @@
 namespace Pim\Bundle\CatalogBundle\Doctrine\ORM\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use PhpSpec\Exception\Fracture\InterfaceNotImplementedException;
 use Pim\Component\Catalog\Repository\AttributeOptionRepositoryInterface;
 
 /**
@@ -141,5 +142,17 @@ class AttributeOptionRepository extends EntityRepository implements
     public function getIdentifierProperties()
     {
         return ['attribute', 'code'];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function findBySearch($search = null, array $options = [])
+    {
+        throw new InterfaceNotImplementedException(
+            'findBySearch is not implemented',
+            'findBySearch',
+            AttributeOptionRepositoryInterface::class
+        );
     }
 }
